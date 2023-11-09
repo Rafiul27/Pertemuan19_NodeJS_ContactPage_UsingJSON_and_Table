@@ -1,0 +1,32 @@
+<h1>Contact List</h1>
+<br>
+<% if (typeof contacts === 'undefined' || contacts.length === 0) { %>
+  <li><h1><%= message %></h1></li>
+<% } else { %>
+  <div class="container">
+    <!-- <h4 class="p-3">Ini adalah daftar kontak</h4> -->
+    <p class="text-sm-3 p-3">Ini dalah beberapa List daftar kontak yang tersedia :</p>
+    <div class="table-responsive">
+      <table class="table table-info table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">No</th>
+            <th scope="col" class="text-center">Nama</th>
+            <th scope="col" class="text-center">Nomor HP</th>
+            <th scope="col" class="text-center">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contacts.forEach((contact, index) => { %>
+            <tr>
+              <td class="text-center"><%= index + 1 %></td>
+              <td><%= contact.nama %></td>
+              <td><%= contact.mobile %></td>
+              <td><%= contact.email %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% } %>
